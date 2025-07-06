@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu8q5kc64og27"]
+
+[ext_resource type="Texture2D" uid="uid://bckeyevaq6hx3" path="res://assets/TurnButtons.png" id="1_7awm8"]
+[ext_resource type="Script" uid="uid://cylmviqx0l3dx" path="res://scripts/ActionButtons.cs" id="1_thimk"]
+
+[node name="Action Buttons" type="Node2D"]
+script = ExtResource("1_thimk")
+
+[node name="Attack" type="Sprite2D" parent="."]
+position = Vector2(-30, 0)
+texture = ExtResource("1_7awm8")
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 20)
+
+[node name="Button" type="Button" parent="Attack"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -10.0
+offset_right = -25.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Move" type="Sprite2D" parent="."]
+position = Vector2(30, 0)
+texture = ExtResource("1_7awm8")
+region_enabled = true
+region_rect = Rect2(50, 0, 50, 20)
+
+[node name="Button" type="Button" parent="Move"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -10.0
+offset_right = -25.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[connection signal="pressed" from="Attack/Button" to="." method="AttackButtonPressed"]
+[connection signal="pressed" from="Move/Button" to="." method="MoveButtonPressed"]
